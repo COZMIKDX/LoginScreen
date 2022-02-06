@@ -1,0 +1,31 @@
+<project>
+    <target name="clean">
+        <delete dir="./out"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="./out/production/Projects/assets"/>
+        <copy todir="./out/production/Projects/assets">
+            <fileset dir="./src/assets">
+                <include name="*.png"/>
+            </fileset>
+        </copy>
+        <javac includeantruntime="false" debug="true" srcdir="./src" destdir="./out/production/Projects">
+            <classpath path="./out/production/Projects"/>
+        </javac>
+    </target>
+
+    <target name="run">
+        <java jar="out/production/Projects/LoginScreen.jar" fork="true">
+            <classpath path="./out/production/Projects"/>
+        </java>
+    </target>
+
+    <target name="jar">
+        <jar basedir="out/production/Projects" destfile="out/production/Projects/LoginScreen.jar">
+            <manifest>
+                <attribute name="Main-Class" value="Game"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
