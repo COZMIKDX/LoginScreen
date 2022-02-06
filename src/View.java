@@ -7,6 +7,8 @@ import java.io.File;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.io.InputStream;
+import java.net.URL;
 
 class View extends JPanel
 {
@@ -26,25 +28,15 @@ class View extends JPanel
         if (bg == null)
         {
             System.out.println("loading bg");
-            bg = loadImage("./assets/LOGINSCREEN.png");
+            // Changed image loading method slightly.
+            // Instead of a relative file path, which only works for launching from
+            // the same folder as the class file or jar, I use a class loader to load
+            // the files as an input stream. Then I give that to Image.IO.
+            ImageLoader imageLoader = new ImageLoader();
+            bg = imageLoader.loadImage("assets/LOGINSCREEN.png");
         }
     }
 
-    static BufferedImage loadImage(String filename)
-	{
-		BufferedImage temp = null;
-		try
-		{
-			temp = ImageIO.read(new File(filename));
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace(System.err);
-			System.exit(1);
-		}
-
-		return temp;
-	}
 
 
     public void drawSprites(Graphics g)

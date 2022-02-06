@@ -25,10 +25,11 @@ class Face extends Sprite
 
         if (faces == null)
         {
+            ImageLoader imageLoader = new ImageLoader();
             faces = new BufferedImage[3];
-            faces[0] = loadImage("./assets/face1.png");
-            faces[1] = loadImage("./assets/face2.png");
-            faces[2] = loadImage("./assets/face3.png");
+            faces[0] = imageLoader.loadImage("assets/face1.png");
+            faces[1] = imageLoader.loadImage("assets/face2.png");
+            faces[2] = imageLoader.loadImage("assets/face3.png");
         }
     }
 

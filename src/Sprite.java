@@ -15,12 +15,12 @@ abstract class Sprite
     abstract void update();
     abstract void drawSelf(Graphics g);
 
-    static BufferedImage loadImage(String filename)
+    /*static BufferedImage loadImage(String filename)
     {
         BufferedImage temp = null;
         try
         {
-            temp = ImageIO.read(new File(filename));
+             temp = ImageIO.read(new File(filename));
         }
         catch (Exception e)
         {
@@ -29,5 +29,5 @@ abstract class Sprite
         }
 
         return temp;
-    }
+    }*/
 }
