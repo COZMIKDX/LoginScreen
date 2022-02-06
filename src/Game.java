@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 
 public class Game extends JFrame
@@ -26,7 +25,7 @@ public class Game extends JFrame
     {
         while (true)
         {
-            //update shit here.
+            //update stuff here.
             controller.update();
             model.update();
             view.repaint();
@@ -39,7 +38,6 @@ public class Game extends JFrame
 			}
 			catch(Exception e)
 			{
-				System.out.println("yo!");
 				e.printStackTrace();
 				System.exit(1);
 			}

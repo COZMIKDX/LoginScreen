@@ -1,9 +1,4 @@
-import java.awt.image.BufferedImage;
 import java.awt.Graphics;
-import javax.imageio.ImageIO;
-import java.io.IOException;
-import java.io.File;
-import java.util.ArrayList;
 
 abstract class Sprite
 {
